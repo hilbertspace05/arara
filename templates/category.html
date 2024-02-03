@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <ul>
+    {% for thread in threads %}
+        <li>
+            <a href="{{ url_for('thread', thread_id=thread.id) }}" class="thread-title">{{ thread.title }}</a>
+            <p class="thread-body">{{ thread.body }}</p>
+        </li>
+    {% endfor %}
+  </ul>
+    <a href="{{ url_for('index') }}">Back to Index</a>
+{% endblock %}

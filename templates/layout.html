@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
+    <script src="{{ url_for("static", filename="scripts.js") }}"></script>
+    <title>{% if title %}{{ title }} | {% endif %}{{ app.config["BLOG_NAME"] }} - Blog Platform</title>
+</head>
+<body>
+    <header class="site-navbar">
+        <div class="site-logo">
+            <a href="{{ url_for('.index') }}"><strong>{{ app.config["BLOG_NAME"] }}</strong></a>
+        </div>
+        <ul class="site-menu right">
+            <li><a href="{{ url_for('.login') }}">Login</a></li>
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('.logout') }}">Logout</a></li>
+            {% else %}
+            <li><a href="{{ url_for('.register') }}">Register</a></li>
+            {% endif %}
+        </ul>
+    </header>
+    <main role="main">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+        <p>&copy; {{ app.config["YEAR"] }} {{ app.config["BLOG_NAME"] }, designed & developed by <a href="#">Your Name</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>

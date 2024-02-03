@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <ul>
+    {% for post in posts %}
+      <li>
+        <a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>
+        <p>{{ post.body }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+    <a href="{{ url_for('index') }}">Back to Index</a>
+
+    <h2>New Post</h2>
+    <form action="{{ url_for('new_post') }}" method="post">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="body">Content:</label><br>
+        <textarea id="body" name="body" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
