@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ thread.title }}</h1>
+  <p><strong>Posted by: {{ thread.user.username }}</strong></p> 
+  {{ thread.body }}
+
+ <hr />
+
+  {% for post in posts %}
+    <div>
+        <p><strong>Posted by: {{ post.user.username }}</strong></p> <!-- Displaying the username of the user who posted -->
+        <p>{{ post.body }}</p>
+        <hr />
+        <!-- Additional post details here -->
+    </div>
+  {% endfor %}
+  
+  <hr />
+  
+   <form action="{{ url_for('add_post', thread_id=thread.id) }}" method="post">
+   
+       <label for="body">Body:</label><br>
+       <textarea id="body" name="body" required></textarea><br>
+   
+       <input type="submit" value="Submit New Post">
+   </form>
+
+  <hr />
+
+  <!-- Link back to index page -->
+  <a href="{{ url_for('index') }}">Go Back To Index Page</a>
+{% endblock %}

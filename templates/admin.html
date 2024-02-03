@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Admin Page</h1>
+  <p>This is the admin page.</p>
+
+<!--  <form method="post" action="/new-category">
+     <label for="category_name">Category Name:</label>
+     <input type="text" id="category_name" name="category_name">
+     <button type="submit">Add Category</button>
+   </form> -->
+    <h1>New Category</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name }}
+    <button type="submit">Create Category</button>
+  </form>
+
+   <a href="/new-category">Add Category</a> 
+
+
+{% endblock %}

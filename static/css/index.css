@@ -1,0 +1,56 @@
+/* General Styles for the List */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Styles for Thread Titles */
+.thread-title {
+    color: #333; /* Dark grey color for text */
+    font-weight: bold; /* Bold font for titles */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.thread-title:hover {
+    color: #007bff; /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Styles for Thread Bodies */
+.thread-body {
+    color: #666; /* Lighter grey for body text */
+    font-size: 0.9em; /* Slightly smaller font size */
+}
+
+/* Styles for Category Names */
+.category-name {
+    display: block;
+    background-color: #f2f2f2; /* light grey background */
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    /* other styles */
+}
+
+/* Separator styling */
+.separator {
+    height: 2px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+/* General list styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}

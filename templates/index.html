@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>Last Threads</h3>
+  <ul>
+    {% for thread in threads %}
+      <li>
+        <a href="{{ url_for('thread', thread_id=thread.id) }}" class="thread-title">{{ thread.title }}</a>
+        <p class="thread-body">{{ thread.body }}</p>
+      </li>
+    {% endfor %}
+
+  <li class="separator"></li>
+
+  <h3>Categories</h3>
+    {% for category in categories %}
+      <li>
+        <a href="{{ url_for('category', category_id=category.id) }}" class="category-name">{{ category.name }}</a>
+      </li>
+    {% endfor %}
+
+  </ul>
+{% endblock %}
